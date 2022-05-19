@@ -22,36 +22,13 @@ class Lidar():
         #channel to the FMU
         self.channel_fmu = self.connection_fmu.channel()
         self.channel_fmu.exchange_declare(exchange='topic_logs', exchange_type='topic')
-            
+
         print("spinning")
         rospy.spin()
 
-    def lidar_data_processing(self, distances, points_for_average=50):
-
-        number_of_scans = 540
-        phi = np.pi/number_of_scans 
-
-        average_distances = np.zeros(540)
-        half = int(points_for_average/2)
-
-        for i in range(half):
-            distances[i] = distances[half]
-            distances[i + 565] = distances[565]
-        
-        for i in range(540):
-            average_distances[i] = np.average(distances[i: i + points_for_average])
-            
-        # find the longest distance and corresponding angle
-        idx = np.argmax(average_distances)
-        distance = average_distances[idx]
-        angle = phi*idx - np.pi/2
-
-        return distance, angle
-        
-
 
     def lidar_callback(self, scan):  
-        
+        print(scan)
         #get time with for rabbit msg
         rt = rospy.get_rostime()
         rostime = rt.secs + rt.nsecs * 1e-09
@@ -63,15 +40,12 @@ class Lidar():
             self.channel_fmu = self.connection_fmu.channel()
             self.channel_fmu.exchange_declare(exchange='topic_logs', exchange_type='topic')
             
-        #input for desired scan data has to be number remember to change
-        distances = np.array(scan.ranges[245: 835])
-        distance, angle = self.lidar_data_processing(distances)
+        ranges = np.array(scan.ranges).tolist()
                  
-        routing_key = "fmu.input.targets"
+        routing_key = "lidar.ranges"
         message = {
             'time': rostimeISO.isoformat(timespec='milliseconds'),         
-            'distance': distance,
-            'angle': angle,
+            'ranges': ranges
             }
             
         self.channel_fmu.basic_publish(
