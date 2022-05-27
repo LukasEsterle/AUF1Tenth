@@ -9,6 +9,9 @@ from sensor_msgs.msg import LaserScan
 import numpy as np
 
 class Lidar():
+    """
+    Class to get Lidar data 
+    """
     def __init__(self):
         
         #rospy
