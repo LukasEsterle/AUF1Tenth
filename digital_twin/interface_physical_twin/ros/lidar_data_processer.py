@@ -19,7 +19,7 @@ class LidarDataProcesser:
         self.rate = rospy.Rate(100)  # 100hz
 
         # rabbitmq
-
+        
         self.credentials = pika.PlainCredentials("guest", "guest")
         self.connectionToFMU = pika.BlockingConnection(
             pika.ConnectionParameters(host="localhost")
@@ -72,7 +72,7 @@ class LidarDataProcesser:
 
         
         """Distance between each scan in radians."""
-        phi = (np.pi / number_of_scans) # 3/4 pi because the lidar only covers 270 degrees
+        phi = (np.pi*2 / 1080) # TODO: 3/4 pi because the lidar only covers 270 degrees
 
 
         """ Half the number of points for average."""
@@ -130,7 +130,7 @@ class LidarDataProcesser:
             )
 
         body = json.loads(body)
-        distance, angle = self.lidar_data_averageing(body, points_for_average=150)
+        distance, angle = self.lidar_data_averageing(body, points_for_average=50)
 
         routing_key = "fmu.input.targets"
         message = {
