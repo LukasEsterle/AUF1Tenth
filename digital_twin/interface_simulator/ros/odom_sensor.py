@@ -14,6 +14,7 @@ import pika
 import sys
 
 
+#conversion from quaternions to euler
 def quaternion_to_euler(x, y, z, w):        
     t0 = +2.0 * (w * x + y * z)
     t1 = +1.0 - 2.0 * (x * x + y * y)
@@ -30,27 +31,30 @@ def quaternion_to_euler(x, y, z, w):
     Z = math.atan2(t3, t4)        
     return X, Y, Z
 
+
 class Odom():
+    """
+    Getting data from the IMU - data is then sent to corresponding FMU 
+    """
     def __init__(self):
-        
-        #rappidmq
-        self.connection_odom = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
-        
+        #rospy
         rospy.init_node('Odom', anonymous=True)
-
         self.rate = rospy.Rate(10) # 100hz
-        self.odom_sub=rospy.Subscriber('odom',Odometry,self.odom_callback)
-        self.steer_angle_sub=rospy.Subscriber('steer_angle',Float64,self.steer_angle_callback)
 
-        # state variables
+        #subcribers
+        self.odom_sub=rospy.Subscriber('odom', Odometry, self.odom_callback)
+        self.steer_angle_sub=rospy.Subscriber('steer_angle', Float64, self.steer_angle_callback)
+
+        #state variables
         self.x = 0
         self.y = 0
         self.theta = 0
         self.velocity = 0
         self.steer_angle = 0.
+                
+        #rabbitmq - channel to fmu 
+        self.connection_odom = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
         
-        
-        #rabbitmq
         self.channel_odom = self.connection_odom.channel()
         self.channel_odom.exchange_declare(exchange='topic_logs', exchange_type='topic')
         print("spinning")
@@ -58,6 +62,10 @@ class Odom():
         
 
     def odom_callback(self, data):
+        """
+        Callback for the odometry data
+        """
+        #getting data
         self.x = data.pose.pose.position.x
         self.y = data.pose.pose.position.y
         _, _, self.theta = quaternion_to_euler( data.pose.pose.orientation.x, 
@@ -66,18 +74,19 @@ class Odom():
                                                 data.pose.pose.orientation.w)
         self.velocity = data.twist.twist.linear.x
         
+        #timestamps for rabbitmq msg 
         rt = rospy.get_rostime()
         rostime = rt.secs + rt.nsecs * 1e-09
         rostimeISO = datetime.datetime.strptime(datetime.datetime.utcfromtimestamp(rostime).isoformat(timespec='milliseconds')+'+0100', "%Y-%m-%dT%H:%M:%S.%f%z")
         
+        #checking if the connection is closed 
         if not self.connection_odom or self.connection_odom.is_closed:
             self.connection_odom = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
             self.channel_odom = self.connection.channel()
             self.channel_odom.exchange_declare(exchange='topic_logs', exchange_type='topic')
         
-        
+        #creating message containing all the state variables and send it to the fmu 
         routing_key = "fmu.input.odom"
-        # create message containing all of the state values from sensor
         message = {
             'time': rostimeISO.isoformat(timespec='milliseconds'),         
             'x_s': self.x,
@@ -87,10 +96,17 @@ class Odom():
             'steer_angle_s': self.steer_angle
         }
 
+        #converting python string to json string 
         self.channel_odom.basic_publish(
             exchange='topic_logs', routing_key=routing_key, body=json.dumps(message))
 
+
     def steer_angle_callback(self, data):
+        """
+        Callback for steering angle data
+        Data is only stored here - Actual publishing occurs in odom_callback
+        """
+        #getting data
         self.steer_angle = data.data
         
 

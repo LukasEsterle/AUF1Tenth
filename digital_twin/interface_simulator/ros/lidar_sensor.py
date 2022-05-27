@@ -10,7 +10,7 @@ import numpy as np
 
 class Lidar():
     """
-    Class to get Lidar data 
+    Node receiving the lidar data 
     """
     def __init__(self):
         
@@ -30,9 +30,14 @@ class Lidar():
         rospy.spin()
 
 
+
     def lidar_callback(self, scan):  
+        """
+        Callback for receving lidar data
+        """        
         print(scan)
-        #get time with for rabbit msg
+
+        #timestamps for rabbit msg
         rt = rospy.get_rostime()
         rostime = rt.secs + rt.nsecs * 1e-09
         rostimeISO = datetime.datetime.strptime(datetime.datetime.utcfromtimestamp(rostime).isoformat(timespec='milliseconds')+'+0100', "%Y-%m-%dT%H:%M:%S.%f%z")
@@ -42,15 +47,18 @@ class Lidar():
             self.connection_fmu = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
             self.channel_fmu = self.connection_fmu.channel()
             self.channel_fmu.exchange_declare(exchange='topic_logs', exchange_type='topic')
-            
+
+        #receiving the data
         ranges = np.array(scan.ranges).tolist()
                  
+        #creating message to send to lidar processing node 
         routing_key = "lidar.ranges"
         message = {
             'time': rostimeISO.isoformat(timespec='milliseconds'),         
             'ranges': ranges
             }
-            
+        
+        #conversion from python string to json string 
         self.channel_fmu.basic_publish(
             exchange='topic_logs', routing_key=routing_key, body=json.dumps(message))
         
