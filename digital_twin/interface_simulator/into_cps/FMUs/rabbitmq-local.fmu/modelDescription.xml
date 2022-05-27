@@ -13,6 +13,7 @@
     </LogCategories>
 
     <DefaultExperiment startTime="0.0" stopTime="16.0" stepSize="0.01"/>
+    <!--Experiment input and output-->
     <ModelVariables>
         <ScalarVariable name="distance" valueReference="20" variability="continuous" causality="output">
             <Real/>
@@ -27,7 +28,7 @@
             <Real start="0.0"/>
         </ScalarVariable> 
 
-
+        <!--Predefined connection settings-->
         <ScalarVariable name="config.hostname" valueReference="0" variability="fixed" causality="parameter" initial="exact">
             <String start="localhost"/> <!--or localhost-->
         </ScalarVariable>
@@ -41,11 +42,10 @@
             <String start="guest"/>
         </ScalarVariable>
 
-
+        <!--Connection configuration-->
         <ScalarVariable name="config.routingkey" valueReference="4" variability="fixed" causality="parameter" initial="exact">
             <String start="fmu.input.targets"/>
         </ScalarVariable>
-
         <ScalarVariable name="config.communicationtimeout" valueReference="5" variability="fixed" causality="parameter" description="Network read time out in seconds" initial="exact">
             <Integer start="60"/>
         </ScalarVariable>

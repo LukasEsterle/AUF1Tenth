@@ -3,12 +3,20 @@ import pickle
 
 from numpy import angle
 
-#Reference: https://github.com/f1tenth/f1tenth_simulator/blob/master/node/simulator.cpp
+"""
+References:
+- https://github.com/f1tenth/f1tenth_simulator/blob/master/node/simulator.cpp
+- https://vinesmsuic.github.io/2020/09/29/robotics-purepersuit/#velocities
+"""
 
 class Controller:
+    """
+    FMU for the controller
+    """
+
     def __init__(self) -> None:
         
-        #constants
+        #constants 
         PI = 3.1456
         max_distance = 15
         max_angle = PI/2
@@ -17,10 +25,12 @@ class Controller:
         self.max_speed = 7.0
         self.max_steering_vel = 3.2 
         self.max_steering_angle = 0.4189
+
+        #normalizing data (in order to use Lidar data)
         self.angle_normalizer = self.max_steering_angle / max_angle
         self.velocity_normalizer = self.max_speed / max_distance
         
-        #parameters
+        #gains for p controller 
         self.kp_speed = 0.1       #speed proportional gain
         self.kp_angle = 1.        #angle proportional gain 
 
@@ -31,10 +41,10 @@ class Controller:
         self.angle = 0.0
 
         #outputs 
-        self.acceleration = 0.0 
-        self.steer_angle_vel = 0.0
-        self.desired_velocity = 0.0
-        self.desired_steer_angle = 0.0
+        self.acceleration = 0.0         
+        self.steer_angle_vel = 0.0      
+        self.desired_velocity = 0.0     
+        self.desired_steer_angle = 0.0  
 
         #reference to xml file 
         self.reference_to_attribute = {
@@ -50,12 +60,12 @@ class Controller:
             9: "desired_steer_angle",
         }
 
-        #references to the inputs and outputs 
+        #references to the inputs, outputs and parameters  
         self.references_input = [0, 1, 6, 7]
         self.references_output = [2, 3, 8, 9]
         self.references_parameter = [4, 5]
 
-        #getting the values 
+        #getting inputs values
         input = self.fmi2GetReal(self.references_input)
 
         self.velocity = input[1][0]
@@ -63,7 +73,9 @@ class Controller:
         self.distance = input[1][2]
         self.angle = input[1][3]
         
+        #getting parameter values
         parameter = self.fmi2GetReal(self.references_parameter)
+        
         self.kp_speed = parameter[1][0]
         self.kp_angle = parameter[1][1]      
        
@@ -76,7 +88,7 @@ class Controller:
         return Fmi2Status.ok
 
 
-    #------INITIALIZATION------ 
+    #------INITIALIZATION (NOT USED FOR NOW)------ 
     def fmi2EnterInitializationMode(self):
         return Fmi2Status.ok
 
@@ -109,7 +121,9 @@ class Controller:
         return self._set_value(references, values)
     
     def _set_value(self, references, values):
-
+        """
+        Function to set the value (Predefined in template)
+        """
         for r, v in zip(references, values):
             setattr(self, self.reference_to_attribute[r], v)
 
@@ -130,7 +144,9 @@ class Controller:
         return self._get_value(references)
     
     def _get_value(self, references):
-
+        """
+        Function to get the value (Predefined in template)
+        """
         values = []
 
         for r in references:
@@ -139,13 +155,16 @@ class Controller:
         return Fmi2Status.ok, values
 
 
+
     #------CONTROLLER LOGIC------
     def control_speed_and_angle(self):
+        """
+        Controller calculating new values for steer angle velocity and acceleration 
+        """
         #calculating and setting the new acceleration
         self.compute_steer_angle_vel() 
         self.compute_acceleration()
         
-
         #setting the output values 
         self.fmi2SetReal(self.references_output, (self.acceleration, self.steer_angle_vel, self.desired_velocity, self.desired_steer_angle))
 
@@ -154,32 +173,46 @@ class Controller:
 
     #------acceleration ------ 
     def compute_acceleration(self):
-        # update desired velocity and normalize the distance
+        """
+        Computing the acceleration
+        """
+        #update desired velocity and normalize the distance
         self.desired_velocity = self.distance * self.velocity_normalizer
 
-        # get difference of velocity
+        #get difference of velocity
         diff = self.desired_velocity - self.velocity
 
-        # determine acceleration or braking based on difference between velocities
+        #determine acceleration or braking based on difference between velocities
         self.set_accel(self.kp_speed * diff)
 
 
     def set_accel(self, accel):
+        """
+        Setting velocity 
+        """
         self.acceleration = min(max(accel, -self.max_accel), self.max_accel)
     
 
+
     #------angle velocity------
     def compute_steer_angle_vel(self):
-        # update desired angle and normalize the angle
+        """
+        Computing the steer angle velocity
+        """
+        #update desired angle and normalize the angle
         self.desired_steer_angle = self.angle  * self.angle_normalizer
 
         #difference between angles
         diff_steer_angle = self.desired_steer_angle - self.steer_angle
 
+        #determine steer angle velocity based on difference between steer angles
         self.set_steer_angle_vel(diff_steer_angle * self.kp_angle)
 
 
     def set_steer_angle_vel(self, steer_angle_vel):
+        """
+        Setting steer angle velocity
+        """
         self.steer_angle_vel = min(max(steer_angle_vel, -self.max_steering_vel), self.max_steering_vel)
 
 

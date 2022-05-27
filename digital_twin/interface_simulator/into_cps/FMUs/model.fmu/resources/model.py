@@ -3,12 +3,18 @@ import pickle
 import math
 from xml.sax.handler import DTDHandler
 
-#Reference: https://github.com/f1tenth/f1tenth_simulator/blob/master/src/st_kinematics.cpp
+"""
+References:
+- https://github.com/f1tenth/f1tenth_simulator/blob/master/src/st_kinematics.cpp
+"""
 
 class Model:
+    """
+    FMU describing the F1Tenth simulator
+    """
     def __init__(self) -> None:
         
-        #constants
+        #constants describing the car 
         self.g = 9.82                #gravity in m/s²
         self.wheelbase = 0.3302
         self.friction_coeff = 0.523
@@ -40,10 +46,7 @@ class Model:
         self.velocity = 0.0         #output
         self.steer_angle = 0.0      #output
 
-
-        self.desired_velocity = 0.
-        self.desired_steer_angle = 0.
-
+        #references to xml
         self.reference_to_attribute = {
             0: "threshold",
             1: "error", 
@@ -54,12 +57,10 @@ class Model:
             6: "x",
             7: "y",
             8: "theta",
-            9: "desired_velocity",
-            10: "desired_steer_angle"
         }
 
         #references to the inputs and outputs 
-        self.references_input = [2, 3, 9, 10]
+        self.references_input = [2, 3]
         self.references_output = [4, 5, 6, 7, 8]
 
         #getting the values 
@@ -71,6 +72,9 @@ class Model:
     
     #------PROCESS IN TIME------ 
     def fmi2DoStep(self, current_time, step_size, no_step_prior):
+        """
+        Running the simulation 
+        """
         #if velocity is low or negative, use normal kinematic single track dynamics 
         if self.velocity < self.threshold:
             self.update_k(step_size)
@@ -120,7 +124,6 @@ class Model:
         return self._set_value(references, values)
     
     def _set_value(self, references, values):
-
         for r, v in zip(references, values):
             setattr(self, self.reference_to_attribute[r], v)
 
@@ -141,7 +144,6 @@ class Model:
         return self._get_value(references)
     
     def _get_value(self, references):
-
         values = []
 
         for r in references:
@@ -153,7 +155,9 @@ class Model:
     
     #------UPDATING THE STATE------
     def update(self, step_size):
-
+        """
+        Updating state of the car 
+        """
         #computing first derivatives of the state
         x_dot = self.velocity * math.cos(self.theta + self.slip_angle)
         y_dot = self.velocity * math.sin(self.theta + self.slip_angle)
@@ -175,13 +179,11 @@ class Model:
             vel_ratio = self.angular_velocity / self.velocity
             first_term = self.friction_coeff / (self.velocity * (self.l_r + self.l_f))
 
-
         theta_double_dot = (self.friction_coeff * self.mass / (self.I_z * self.wheelbase)) * \
             (self.l_f * self.cs_f * self.steer_angle * (rear_val) + self.slip_angle 
             * (self.l_r * self.cs_r * (front_val) - self.l_f * self.cs_f * (rear_val)) 
             - vel_ratio * (self.l_f**2 * self.cs_f * (rear_val) + self.l_r**2 * self.cs_r * (front_val)))
 
-        
         slip_angle_dot = (first_term) * (self.cs_f * self.steer_angle * (rear_val) - self.slip_angle * 
         (self.cs_r * (front_val) + self.cs_f * (rear_val)) +  vel_ratio * (self.cs_r * self.l_r * 
         (front_val) - self.cs_f * self.l_f * (rear_val))) - self.angular_velocity
@@ -200,6 +202,9 @@ class Model:
     
     #------normal kinematic------
     def update_k(self, step_size):
+        """
+        Updating state of the car using normal kinematic 
+        """
         #computing first derivative of state
         x_dot = self.velocity * math.cos(self.theta)
         y_dot = self.velocity * math.sin(self.theta)

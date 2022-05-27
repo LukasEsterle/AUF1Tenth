@@ -48,14 +48,6 @@
     <ScalarVariable name="theta" valueReference="8" variability="discrete" causality="output" initial="approx">
       <Real start="0.0"/>
     </ScalarVariable>
-    <!--Index of variable = "10"-->
-    <ScalarVariable name="desired_velocity" valueReference="9" variability="discrete" causality="input">
-      <Real start ="0.0"/>
-    </ScalarVariable>
-    <!--Index of variable = "11"-->
-    <ScalarVariable name="desired_steer_angle" valueReference="10" variability="discrete" causality="input">
-      <Real start="0.0"/>
-    </ScalarVariable>
   </ModelVariables>
 
   <ModelStructure>
