@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fmiModelDescription fmiVersion="2.0" modelName="unifmu" guid="77236337-210e-4e9c-8f2c-c1a0677db21b" author="Christian Møldrup Legaard" generationDateAndTime="2020-10-23T19:51:25Z" variableNamingConvention="flat" generationTool="unifmu">
+  <CoSimulation modelIdentifier="unifmu" needsExecutionTool="true" canNotUseMemoryManagementFunctions="false" canHandleVariableCommunicationStepSize="true" />
+  <LogCategories>
+    <Category name="logStatusWarning" />
+    <Category name="logStatusDiscard" />
+    <Category name="logStatusError" />
+    <Category name="logStatusFatal" />
+    <Category name="logStatusPending" />
+    <Category name="logAll" />
+  </LogCategories>
+
+
+  <ModelVariables>
+    <!--Index of variable = "1"-->
+    <ScalarVariable name="velocity" valueReference="0" variability="continuous" causality="input">
+      <Real start ="0.0" />
+    </ScalarVariable>
+    <!--Index of variable = "2"-->
+    <ScalarVariable name="steer_angle" valueReference="1" variability="continuous" causality="input">
+      <Real start ="0.0" />
+    </ScalarVariable>
+    <!--Index of variable = "3"-->
+    <ScalarVariable name="acceleration" valueReference="2" variability="continuous" causality="output" initial="approx">
+      <Real start ="0.0" />
+    </ScalarVariable>
+    <!--Index of variable = "4"-->
+    <ScalarVariable name="steer_angle_vel" valueReference="3" variability="continuous" causality="output" initial="approx">
+      <Real start="0.0" />
+    </ScalarVariable>
+    <!--Index of variable = "5"-->
+    <ScalarVariable name="kp_speed" valueReference="4" variability="fixed" causality="parameter" initial="exact">
+      <Real start="0.5" />
+    </ScalarVariable>
+    <!--Index of variable = "6"-->
+    <ScalarVariable name="kp_angle" valueReference="5" variability="fixed" causality="parameter" initial="exact">
+      <Real start="0.5" />
+    </ScalarVariable>
+    <!--Index of variable = "7"-->
+    <ScalarVariable name="distance" valueReference="6" variability="discrete" causality="input">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!--Index of variable = "8"-->
+    <ScalarVariable name="angle" valueReference="7" variability="discrete" causality="input">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!--Index of variable = "9"-->
+    <ScalarVariable name="desired_angle" valueReference="8" variability="discrete" causality="output" initial="approx">
+      <Real start="0.0"/>
+    </ScalarVariable>
+  </ModelVariables>
+
+
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="3" dependencies="" />
+      <Unknown index="4" dependencies="" />
+      <Unknown index="9" dependencies="" />
+    </Outputs>
+  </ModelStructure>
+</fmiModelDescription>

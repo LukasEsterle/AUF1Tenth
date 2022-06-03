@@ -1,0 +1,3 @@
+time,step-size,{controller}.c.acceleration,{controller}.c.steer_angle_vel,{model}.m.steer_angle,{model}.m.velocity,{rabbitmq}.r.angle,{rabbitmq}.r.distance
+0.0,0.0,0.0,0.0,0.0,0.0,-0.02327105669325769,10.329751014709473
+0.01,0.01,1.156932113647461,-0.02741694088726588,0.0,0.0,-0.03490658503988664,10.320103645324709

@@ -1,3 +1,0 @@
-time,step-size,{controller}.c.acceleration,{controller}.c.steer_angle_vel,{model}.m.steer_angle,{model}.m.velocity,{odom}.o.steer_angle_s,{odom}.o.theta_s,{odom}.o.velocity_s,{odom}.o.x_s,{odom}.o.y_s,{rabbit}.r.angle,{rabbit}.r.distance
-0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.8305216947561768,0.8305216947561768,1.5649785626215822,8.566579875946045
-0.01,0.01,2.3986423652648927,1.875675762633401,0.0,0.0,0.0,0.0,0.0,0.8305216947561768,0.8305216947561768,1.5649785626215822,8.566579875946045
