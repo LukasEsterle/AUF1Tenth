@@ -14,27 +14,22 @@
 
     <DefaultExperiment startTime="0.0" stopTime="16.0" stepSize="0.01"/>
     <ModelVariables>
-        <!--Index of variable = "1"-->
         <ScalarVariable name="distance" valueReference="20" variability="continuous" causality="output">
             <Real/>
         </ScalarVariable>
-        <!--Index of variable = "2"-->
         <ScalarVariable name="angle" valueReference="21" variability="continuous" causality="output">
             <Real/>
         </ScalarVariable>
-        
-        <!--Index of variable = "7"-->
-        <ScalarVariable name="acceleration" valueReference="22" variability="discrete" causality="input">
+        <ScalarVariable name="acceleration" valueReference="22" variability="continuous" causality="input">
             <Real start="0.0"/>
         </ScalarVariable>
-        <!--Index of variable = "8"-->
-        <ScalarVariable name="steer_angle_vel" valueReference="23" variability="discrete" causality="input">
+        <ScalarVariable name="steer_angle_vel" valueReference="23" variability="continuous" causality="input">
             <Real start="0.0"/>
-        </ScalarVariable>
+        </ScalarVariable> 
 
 
         <ScalarVariable name="config.hostname" valueReference="0" variability="fixed" causality="parameter" initial="exact">
-            <String start="localhost"/>
+            <String start="localhost"/> <!--or localhost-->
         </ScalarVariable>
         <ScalarVariable name="config.port" valueReference="1" variability="fixed" causality="parameter" initial="exact">
             <Integer start="5672"/>
@@ -61,7 +56,7 @@
             <Integer start="1000"/>
         </ScalarVariable>
         <ScalarVariable name="config.lookahead" valueReference="8" variability="fixed" causality="parameter" description="The number of queue messages that should be considered on each processing. Value must be greater than 0" initial="exact">
-            <Integer start="1"/>
+            <Integer start="5"/>
         </ScalarVariable>
         <ScalarVariable name="config.exchangename" valueReference="9" variability="fixed" causality="parameter" initial="exact">
             <String start="topic_logs"/>
