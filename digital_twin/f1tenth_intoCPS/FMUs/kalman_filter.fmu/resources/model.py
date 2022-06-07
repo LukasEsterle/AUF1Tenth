@@ -5,7 +5,11 @@ from xml.sax.handler import DTDHandler
 import numpy as np
 from scipy.integrate import odeint
 
-#Reference: https://github.com/f1tenth/f1tenth_simulator/blob/master/src/st_kinematics.cpp
+"""
+Uncented Kalman Filter FMU 
+The code is form Luminita C. Totu's lectures at AiRLab Skejby.
+Modified for use in this project.
+"""
 
 class Model:
     def __init__(self) -> None:
