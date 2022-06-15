@@ -1,0 +1,13 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <arg name="racecar_version" />
+  <arg name="test_config"
+       default="$(find racecar)/config/$(arg racecar_version)/test.yaml" />
+
+  <rosparam file="$(arg test_config)" command="load" />
+
+  <!--q<node pkg="test" type="test_node" name="test_node" /> -->
+
+  <node pkg="racecar" type="test.py" name="test" />
+
+</launch>

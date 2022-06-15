@@ -1,0 +1,346 @@
+Script started on 2022-04-27 13:05:04+0200
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/config$ cd j[Kscrip
+bash: cd: scrip: No such file or directory
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/config$ cd script
+bash: cd: script: No such file or directory
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/config$ l[Kdir
+racecar-v2  typescript
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/config$ c[Kcd ..
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ ls
+CMakeLists.txt  [0m[01;34mconfig[0m  [01;34mlaunch[0m  LICENSE  [01;34mmaps[0m  package.xml  [01;34mrviz[0m  [01;34mscripts[0m
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ cd scripts/
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ ls
+[0m[01;32mjoy_teleop.py[0m
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ gedit joy_teleop.py 
+^C
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ gedit test_keyboard.py
+^C
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ ls
+[0m[01;32mjoy_teleop.py[0m  test_keyboard.py
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ cd ..
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ ls
+CMakeLists.txt  [0m[01;34mconfig[0m  [01;34mlaunch[0m  LICENSE  [01;34mmaps[0m  package.xml  [01;34mrviz[0m  [01;34mscripts[0m
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ cd l[Kscripts/
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ chmod +x 
+joy_teleop.py     test_keyboard.py  
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ chmod +x test_keyboard.py 
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ ls
+[0m[01;32mjoy_teleop.py[0m  [01;32mtest_keyboard.py[0m
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/scripts$ cd ..
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ ls
+CMakeLists.txt  [0m[01;34mconfig[0m  [01;34mlaunch[0m  LICENSE  [01;34mmaps[0m  package.xml  [01;34mrviz[0m  [01;34mscripts[0m
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ cd launch/
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ ls
+[0m[01;34mincludes[0m  known_map_localization.launch  mux.launch  [01;34mreplay_bag_file[0m  teleop.launch
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ gedit test.launch
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ ^C
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ ropstic[K[K[K[K[K[K[Krostopic echo drive
+WARNING: topic [/drive] does not appear to be published yet
+ls  ^Cf1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ ropsti[K[K[K[Kstopi[Kic list
+/dev/null
+/diagnostics
+/laser_node/parameter_descriptions
+/laser_node/parameter_updates
+/laser_status
+/rosout
+/rosout_agg
+/scan
+/tf_static
+/vesc/ackermann_cmd_mux/input/navigation
+/vesc/ackermann_cmd_mux/input/safety
+/vesc/ackermann_cmd_mux/input/teleop
+/vesc/commands/motor/brake
+/vesc/commands/motor/current
+/vesc/commands/motor/duty_cycle
+/vesc/commands/motor/position
+/vesc/commands/motor/speed
+/vesc/commands/motor/unsmoothed_speed
+/vesc/commands/servo/position
+/vesc/commands/servo/unsmoothed_position
+/vesc/high_level/ackermann_cmd_mux/active
+/vesc/high_level/ackermann_cmd_mux/input/default
+/vesc/high_level/ackermann_cmd_mux/input/nav_0
+/vesc/high_level/ackermann_cmd_mux/input/nav_1
+/vesc/high_level/ackermann_cmd_mux/input/nav_2
+/vesc/high_level/ackermann_cmd_mux/input/nav_3
+/vesc/high_level/ackermann_cmd_mux/output
+/vesc/high_level/ackermann_cmd_mux/parameter_descriptions
+/vesc/high_level/ackermann_cmd_mux/parameter_updates
+/vesc/high_level/ackermann_cmd_mux_nodelet_manager/bond
+/vesc/joy
+/vesc/joy/set_feedback
+/vesc/low_level/ackermann_cmd_mux/active
+/vesc/low_level/ackermann_cmd_mux/input/navigation
+/vesc/low_level/ackermann_cmd_mux/input/safety
+/vesc/low_level/ackermann_cmd_mux/input/teleop
+/vesc/low_level/ackermann_cmd_mux/output
+/vesc/low_level/ackermann_cmd_mux/parameter_descriptions
+/vesc/low_level/ackermann_cmd_mux/parameter_updates
+/vesc/low_level/ackermann_cmd_mux_nodelet_manager/bond
+/vesc/odom
+/vesc/sensors/core
+/vesc/sensors/servo_position_command
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ ls
+[0m[01;34mincludes[0m  known_map_localization.launch  mux.launch  [01;34mreplay_bag_file[0m  teleop.launch  test.launch
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ rosrun rqt_graph p[Krqt_graph
+^Cf1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ ls
+[0m[01;34mincludes[0m  known_map_localization.launch  mux.launch  [01;34mreplay_bag_file[0m  [01;35mrosgraph.png[0m  teleop.launch  test.launch
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ rosgraph [K.png
+bash: rosgraph.png: command not found
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ feh
+bash: feh: command not found
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ shd[K[Kudo apt.-get[K[K[K[K[K-get install feh
+[sudo] password for f1t: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  apt-clone archdetect-deb bogl-bterm busybox-static cryptsetup-bin dpkg-repack gir1.2-timezonemap-1.0 gir1.2-xkl-1.0 grub-common kde-window-manager kinit kio kpackagetool5 kwayland-data kwin-common
+  kwin-data kwin-x11 libdebian-installer4 libkdecorations2-5v5 libkdecorations2private5v5 libkf5activities5 libkf5attica5 libkf5completion-data libkf5completion5 libkf5declarative-data
+  libkf5declarative5 libkf5doctools5 libkf5globalaccel-data libkf5globalaccel5 libkf5globalaccelprivate5 libkf5idletime5 libkf5jobwidgets-data libkf5jobwidgets5 libkf5kcmutils-data libkf5kcmutils5
+  libkf5kiocore5 libkf5kiontlm5 libkf5kiowidgets5 libkf5newstuff-data libkf5newstuff5 libkf5newstuffcore5 libkf5package-data libkf5package5 libkf5plasma5 libkf5quickaddons5 libkf5solid5
+  libkf5solid5-data libkf5sonnet5-data libkf5sonnetcore5 libkf5sonnetui5 libkf5textwidgets-data libkf5textwidgets5 libkf5waylandclient5 libkf5waylandserver5 libkf5xmlgui-bin libkf5xmlgui-data
+  libkf5xmlgui5 libkscreenlocker5 libkwin4-effect-builtins1 libkwineffects11 libkwinglutils11 libkwinxrenderutils11 libqgsttools-p1 libqt5multimedia5 libqt5multimedia5-plugins
+  libqt5multimediaquick-p5 libqt5multimediawidgets5 libxcb-composite0 libxcb-cursor0 libxcb-damage0 os-prober python3-dbus.mainloop.pyqt5 python3-icu python3-pam python3-pyqt5 python3-pyqt5.qtsvg
+  python3-pyqt5.qtwebkit qml-module-org-kde-kquickcontrolsaddons qml-module-qtmultimedia rdate tasksel tasksel-data
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  yudit-common
+Suggested packages:
+  yudit-doc yudit
+The following NEW packages will be installed:
+  feh yudit-common
+0 upgraded, 2 newly installed, 0 to remove and 92 not upgraded.
+Need to get 1.748 kB of archives.
+After this operation, 9.755 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+0% [Working]            Get:1 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 yudit-common all 2.9.6-7 [1.638 kB]
+1% [1 yudit-common 12,6 kB/1.638 kB 1%]                                       85% [Working]             Get:2 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 feh arm64 2.23.2-1build1 [110 kB]
+85% [2 feh 11,3 kB/110 kB 10%]                              100% [Working]              Fetched 1.748 kB in 1s (3.463 kB/s)
+Selecting previously unselected package yudit-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 245962 files and directories currently installed.)
+Preparing to unpack .../yudit-common_2.9.6-7_all.deb ...
+Unpacking yudit-common (2.9.6-7) ...
+Selecting previously unselected package feh.
+Preparing to unpack .../feh_2.23.2-1build1_arm64.deb ...
+Unpacking feh (2.23.2-1build1) ...
+Setting up yudit-common (2.9.6-7) ...
+Setting up feh (2.23.2-1build1) ...
+Processing triggers for gnome-menus (3.13.3-11ubuntu1.1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3.18.04.2) ...
+Processing triggers for bamfdaemon (0.5.3+18.04.20180207.2-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ sudo apt-get install fehfeh[Krosgraph.pngfeh[Ksudo apt-get install feh[Kropstip[K[Kopic l[Klist
+bash: ropstopic: command not found
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar/launch$ cd ..
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ ropst[K[K[Kstopic list
+/dev/null
+/diagnostics
+/laser_node/parameter_descriptions
+/laser_node/parameter_updates
+/laser_status
+/rosout
+/rosout_agg
+/scan
+/tf_static
+/vesc/ackermann_cmd_mux/input/navigation
+/vesc/ackermann_cmd_mux/input/safety
+/vesc/ackermann_cmd_mux/input/teleop
+/vesc/commands/motor/brake
+/vesc/commands/motor/current
+/vesc/commands/motor/duty_cycle
+/vesc/commands/motor/position
+/vesc/commands/motor/speed
+/vesc/commands/motor/unsmoothed_speed
+/vesc/commands/servo/position
+/vesc/commands/servo/unsmoothed_position
+/vesc/high_level/ackermann_cmd_mux/active
+/vesc/high_level/ackermann_cmd_mux/input/default
+/vesc/high_level/ackermann_cmd_mux/input/nav_0
+/vesc/high_level/ackermann_cmd_mux/input/nav_1
+/vesc/high_level/ackermann_cmd_mux/input/nav_2
+/vesc/high_level/ackermann_cmd_mux/input/nav_3
+/vesc/high_level/ackermann_cmd_mux/output
+/vesc/high_level/ackermann_cmd_mux/parameter_descriptions
+/vesc/high_level/ackermann_cmd_mux/parameter_updates
+/vesc/high_level/ackermann_cmd_mux_nodelet_manager/bond
+/vesc/joy
+/vesc/joy/set_feedback
+/vesc/low_level/ackermann_cmd_mux/active
+/vesc/low_level/ackermann_cmd_mux/input/navigation
+/vesc/low_level/ackermann_cmd_mux/input/safety
+/vesc/low_level/ackermann_cmd_mux/input/teleop
+/vesc/low_level/ackermann_cmd_mux/output
+/vesc/low_level/ackermann_cmd_mux/parameter_descriptions
+/vesc/low_level/ackermann_cmd_mux/parameter_updates
+/vesc/low_level/ackermann_cmd_mux_nodelet_manager/bond
+/vesc/odom
+/vesc/sensors/core
+/vesc/sensors/servo_position_command
+f1t@f1t-car:~/f1tenthv2/f1tenth_ws/src/f1tenth_system/racecar/racecar$ l[Krops[K[K[K[Kcd \
+> 
+f1t@f1t-car:~$ mkdir vanderbilt 
+f1t@f1t-car:~$ cd vqn[K[Kanderbilt/
+f1t@f1t-car:~/vanderbilt$ mkdir src[Kc
+f1t@f1t-car:~/vanderbilt$ cd src
+f1t@f1t-car:~/vanderbilt/src$ git clone https://github.com/verivital/F1TenthVanderbilt
+Cloning into 'F1TenthVanderbilt'...
+fatal: unable to access 'https://github.com/verivital/F1TenthVanderbilt/': Failed to connect to github.com port 443: No route to host
+f1t@f1t-car:~/vanderbilt/src$ catkin mak[K[K[K[K[K[K[K[K[K[Kcd ..
+f1t@f1t-car:~/vanderbilt$ catkin make
+usage: catkin [-h] [-a] [--test-colors] [--version]
+              [--force-color | --no-color]
+              [build | clean | config | create | env | init | list | locate | profile | test]
+              ...
+
+Error: Unknown verb 'make' provided.
+f1t@f1t-car:~/vanderbilt$ catkin_make
+Base path: /home/f1t/vanderbilt
+Source space: /home/f1t/vanderbilt/src
+Build space: /home/f1t/vanderbilt/build
+Devel space: /home/f1t/vanderbilt/devel
+Install space: /home/f1t/vanderbilt/install
+Creating symlink "/home/f1t/vanderbilt/src/CMakeLists.txt" pointing to "/opt/ros/melodic/share/catkin/cmake/toplevel.cmake"
+[34m####[0m
+[34m#### Running command: [1m"cmake /home/f1t/vanderbilt/src -DCATKIN_DEVEL_PREFIX=/home/f1t/vanderbilt/devel -DCMAKE_INSTALL_PREFIX=/home/f1t/vanderbilt/install -G Unix Makefiles"[0m[34m in [1m"/home/f1t/vanderbilt/build"[0m
+[34m####[0m
+-- The C compiler identification is GNU 7.5.0
+[0m-- The CXX compiler identification is GNU 7.5.0
+[0m-- Check for working C compiler: /usr/bin/cc
+[0m-- Check for working C compiler: /usr/bin/cc -- works
+[0m-- Detecting C compiler ABI info
+[0m-- Detecting C compiler ABI info - done
+[0m-- Detecting C compile features
+[0m-- Detecting C compile features - done
+[0m-- Check for working CXX compiler: /usr/bin/c++
+[0m-- Check for working CXX compiler: /usr/bin/c++ -- works
+[0m-- Detecting CXX compiler ABI info
+[0m-- Detecting CXX compiler ABI info - done
+[0m-- Detecting CXX compile features
+[0m-- Detecting CXX compile features - done
+[0m-- Using CATKIN_DEVEL_PREFIX: /home/f1t/vanderbilt/devel
+[0m-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic
+[0m-- This workspace overlays: /opt/ros/melodic
+[0m-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+[0m-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+[0m-- Using Debian Python package layout
+[0m-- Using empy: /usr/bin/empy
+[0m-- Using CATKIN_ENABLE_TESTING: ON
+[0m-- Call enable_testing()
+[0m-- Using CATKIN_TEST_RESULTS_DIR: /home/f1t/vanderbilt/build/test_results
+[0m-- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0m-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0m-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+[0m-- Looking for pthread.h
+[0m-- Looking for pthread.h - found
+[0m-- Looking for pthread_create
+[0m-- Looking for pthread_create - not found
+[0m-- Looking for pthread_create in pthreads
+[0m-- Looking for pthread_create in pthreads - not found
+[0m-- Looking for pthread_create in pthread
+[0m-- Looking for pthread_create in pthread - found
+[0m-- Found Threads: TRUE  
+[0m-- Using Python nosetests: /usr/bin/nosetests-2.7
+[0m-- catkin 0.7.29
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- BUILD_SHARED_LIBS is on
+[0m-- Configuring done
+[0m-- Generating done
+[0m-- Build files have been written to: /home/f1t/vanderbilt/build
+[0m[34m####[0m
+[34m#### Running command: [1m"make -j4 -l4"[0m[34m in [1m"/home/f1t/vanderbilt/build"[0m
+[34m####[0m
+f1t@f1t-car:~/vanderbilt$ catkin_make[K[K[K[K[K[K[K[K[K[K[Kcd src
+f1t@f1t-car:~/vanderbilt/src$ cd srcatkin_make make[6Pd ..git clone https://github.com/verivital/F1TenthVanderbilt
+Cloning into 'F1TenthVanderbilt'...
+remote: Enumerating objects: 2564, done.[K
+Receiving objects:   0% (1/2564)   Receiving objects:   1% (26/2564)   Receiving objects:   2% (52/2564)   Receiving objects:   2% (76/2564), 4.49 MiB | 4.48 MiB/s   Receiving objects:   2% (76/2564), 10.92 MiB | 5.44 MiB/s   Receiving objects:   3% (77/2564), 15.50 MiB | 6.18 MiB/s   Receiving objects:   4% (103/2564), 15.50 MiB | 6.18 MiB/s   Receiving objects:   5% (129/2564), 15.50 MiB | 6.18 MiB/s   Receiving objects:   5% (132/2564), 15.50 MiB | 6.18 MiB/s   Receiving objects:   6% (154/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:   7% (180/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:   8% (206/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:   9% (231/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  10% (257/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  11% (283/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  12% (308/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  13% (334/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  14% (359/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  15% (385/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  16% (411/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  17% (436/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  18% (462/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  19% (488/2564), 20.23 MiB | 6.73 MiB/s   Receiving objects:  19% (512/2564), 29.55 MiB | 7.38 MiB/s   Receiving objects:  20% (513/2564), 29.55 MiB | 7.38 MiB/s   Receiving objects:  20% (536/2564), 39.47 MiB | 8.29 MiB/s   Receiving objects:  20% (536/2564), 49.48 MiB | 9.49 MiB/s   Receiving objects:  20% (536/2564), 59.70 MiB | 9.82 MiB/s   Receiving objects:  20% (536/2564), 67.14 MiB | 9.38 MiB/s   Receiving objects:  20% (537/2564), 74.32 MiB | 8.86 MiB/s   Receiving objects:  20% (538/2564), 83.49 MiB | 8.68 MiB/s   Receiving objects:  20% (538/2564), 91.85 MiB | 8.27 MiB/s   Receiving objects:  20% (538/2564), 101.72 MiB | 8.77 MiB/s   Receiving objects:  20% (538/2564), 111.83 MiB | 9.39 MiB/s   Receiving objects:  21% (539/2564), 116.61 MiB | 9.39 MiB/s   Receiving objects:  21% (539/2564), 121.22 MiB | 9.43 MiB/s   Receiving objects:  21% (541/2564), 130.79 MiB | 9.79 MiB/s   Receiving objects:  21% (541/2564), 139.96 MiB | 9.62 MiB/s   Receiving objects:  21% (545/2564), 149.67 MiB | 9.52 MiB/s   Receiving objects:  21% (545/2564), 159.75 MiB | 9.58 MiB/s   Receiving objects:  21% (546/2564), 165.29 MiB | 8.71 MiB/s   Receiving objects:  21% (546/2564), 170.91 MiB | 7.84 MiB/s   Receiving objects:  21% (546/2564), 178.43 MiB | 7.36 MiB/s   Receiving objects:  21% (552/2564), 188.57 MiB | 7.44 MiB/s   Receiving objects:  21% (552/2564), 198.76 MiB | 8.23 MiB/s   Receiving objects:  21% (552/2564), 208.42 MiB | 9.32 MiB/s   Receiving objects:  21% (552/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  22% (565/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  23% (590/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  24% (616/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  25% (641/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  26% (667/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  27% (693/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  28% (718/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  29% (744/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  30% (770/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  31% (795/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  32% (821/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  33% (847/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  34% (872/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  35% (898/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  36% (924/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  37% (949/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  38% (975/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  39% (1000/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  40% (1026/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  41% (1052/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  42% (1077/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  43% (1103/2564), 218.26 MiB | 9.78 MiB/s   Receiving objects:  44% (1129/2564), 221.36 MiB | 9.42 MiB/s   Receiving objects:  45% (1154/2564), 221.36 MiB | 9.42 MiB/s   Receiving objects:  46% (1180/2564), 221.36 MiB | 9.42 MiB/s   Receiving objects:  47% (1206/2564), 221.36 MiB | 9.42 MiB/s   Receiving objects:  48% (1231/2564), 221.36 MiB | 9.42 MiB/s   Receiving objects:  48% (1246/2564), 225.47 MiB | 9.25 MiB/s   Receiving objects:  48% (1246/2564), 232.45 MiB | 8.51 MiB/s   Receiving objects:  48% (1246/2564), 239.82 MiB | 7.92 MiB/s   Receiving objects:  48% (1246/2564), 246.84 MiB | 7.38 MiB/s   Receiving objects:  49% (1257/2564), 246.84 MiB | 7.38 MiB/s   Receiving objects:  50% (1282/2564), 246.84 MiB | 7.38 MiB/s   Receiving objects:  51% (1308/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  52% (1334/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  53% (1359/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  54% (1385/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  55% (1411/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  56% (1436/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  57% (1462/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  58% (1488/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  59% (1513/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  60% (1539/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  61% (1565/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  62% (1590/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  63% (1616/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  64% (1641/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  65% (1667/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  66% (1693/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  67% (1718/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  68% (1744/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  69% (1770/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  70% (1795/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  71% (1821/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  72% (1847/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  73% (1872/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  74% (1898/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  75% (1923/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  76% (1949/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  77% (1975/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  78% (2000/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  78% (2016/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  79% (2026/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  80% (2052/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  81% (2077/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  82% (2103/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  83% (2129/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  84% (2154/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  85% (2180/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  86% (2206/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  87% (2231/2564), 251.24 MiB | 7.25 MiB/s   Receiving objects:  88% (2257/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  89% (2282/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  90% (2308/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  91% (2334/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  92% (2359/2564), 256.07 MiB | 7.71 MiB/s   remote: Total 2564 (delta 0), reused 0 (delta 0), pack-reused 2564[K
+Receiving objects:  93% (2385/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  94% (2411/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  95% (2436/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  96% (2462/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  97% (2488/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  98% (2513/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects:  99% (2539/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects: 100% (2564/2564), 256.07 MiB | 7.71 MiB/s   Receiving objects: 100% (2564/2564), 256.88 MiB | 8.50 MiB/s, done.
+Resolving deltas:   0% (0/1261)   Resolving deltas:   1% (16/1261)   Resolving deltas:   7% (98/1261)   Resolving deltas:   9% (118/1261)   Resolving deltas:  11% (140/1261)   Resolving deltas:  12% (154/1261)   Resolving deltas:  13% (164/1261)   Resolving deltas:  14% (180/1261)   Resolving deltas:  15% (191/1261)   Resolving deltas:  16% (203/1261)   Resolving deltas:  17% (223/1261)   Resolving deltas:  18% (227/1261)   Resolving deltas:  20% (253/1261)   Resolving deltas:  21% (272/1261)   Resolving deltas:  22% (278/1261)   Resolving deltas:  24% (305/1261)   Resolving deltas:  25% (319/1261)   Resolving deltas:  26% (329/1261)   Resolving deltas:  27% (345/1261)   Resolving deltas:  28% (358/1261)   Resolving deltas:  29% (367/1261)   Resolving deltas:  30% (380/1261)   Resolving deltas:  31% (391/1261)   Resolving deltas:  33% (419/1261)   Resolving deltas:  34% (440/1261)   Resolving deltas:  35% (445/1261)   Resolving deltas:  36% (454/1261)   Resolving deltas:  37% (467/1261)   Resolving deltas:  38% (489/1261)   Resolving deltas:  39% (498/1261)   Resolving deltas:  40% (505/1261)   Resolving deltas:  41% (519/1261)   Resolving deltas:  42% (533/1261)   Resolving deltas:  43% (545/1261)   Resolving deltas:  44% (559/1261)   Resolving deltas:  45% (569/1261)   Resolving deltas:  46% (581/1261)   Resolving deltas:  47% (593/1261)   Resolving deltas:  48% (608/1261)   Resolving deltas:  49% (623/1261)   Resolving deltas:  50% (632/1261)   Resolving deltas:  51% (649/1261)   Resolving deltas:  52% (656/1261)   Resolving deltas:  53% (669/1261)   Resolving deltas:  54% (683/1261)   Resolving deltas:  55% (694/1261)   Resolving deltas:  56% (716/1261)   Resolving deltas:  57% (731/1261)   Resolving deltas:  60% (766/1261)   Resolving deltas:  61% (771/1261)   Resolving deltas:  66% (834/1261)   Resolving deltas:  67% (846/1261)   Resolving deltas:  68% (865/1261)   Resolving deltas:  71% (899/1261)   Resolving deltas:  74% (941/1261)   Resolving deltas:  76% (969/1261)   Resolving deltas:  78% (990/1261)   Resolving deltas:  81% (1030/1261)   Resolving deltas:  83% (1049/1261)   Resolving deltas:  84% (1066/1261)   Resolving deltas:  85% (1075/1261)   Resolving deltas:  86% (1088/1261)   Resolving deltas:  87% (1099/1261)   Resolving deltas:  89% (1123/1261)   Resolving deltas:  90% (1139/1261)   Resolving deltas:  91% (1148/1261)   Resolving deltas:  94% (1197/1261)   Resolving deltas:  95% (1200/1261)   Resolving deltas:  96% (1211/1261)   Resolving deltas:  97% (1224/1261)   Resolving deltas:  98% (1236/1261)   Resolving deltas:  99% (1252/1261)   Resolving deltas: 100% (1261/1261)   Resolving deltas: 100% (1261/1261), done.
+Checking out files:  28% (347/1220)   Checking out files:  28% (348/1220)   Checking out files:  28% (351/1220)   Checking out files:  29% (354/1220)   Checking out files:  29% (356/1220)   Checking out files:  29% (358/1220)   Checking out files:  29% (361/1220)   Checking out files:  30% (366/1220)   Checking out files:  30% (368/1220)   Checking out files:  31% (379/1220)   Checking out files:  31% (388/1220)   Checking out files:  32% (391/1220)   Checking out files:  33% (403/1220)   Checking out files:  34% (415/1220)   Checking out files:  35% (427/1220)   Checking out files:  36% (440/1220)   Checking out files:  37% (452/1220)   Checking out files:  38% (464/1220)   Checking out files:  39% (476/1220)   Checking out files:  40% (488/1220)   Checking out files:  41% (501/1220)   Checking out files:  42% (513/1220)   Checking out files:  43% (525/1220)   Checking out files:  44% (537/1220)   Checking out files:  45% (549/1220)   Checking out files:  46% (562/1220)   Checking out files:  47% (574/1220)   Checking out files:  48% (586/1220)   Checking out files:  49% (598/1220)   Checking out files:  50% (610/1220)   Checking out files:  51% (623/1220)   Checking out files:  52% (635/1220)   Checking out files:  53% (647/1220)   Checking out files:  54% (659/1220)   Checking out files:  55% (671/1220)   Checking out files:  56% (684/1220)   Checking out files:  57% (696/1220)   Checking out files:  58% (708/1220)   Checking out files:  59% (720/1220)   Checking out files:  60% (732/1220)   Checking out files:  61% (745/1220)   Checking out files:  62% (757/1220)   Checking out files:  63% (769/1220)   Checking out files:  64% (781/1220)   Checking out files:  65% (793/1220)   Checking out files:  66% (806/1220)   Checking out files:  67% (818/1220)   Checking out files:  68% (830/1220)   Checking out files:  69% (842/1220)   Checking out files:  70% (854/1220)   Checking out files:  71% (867/1220)   Checking out files:  72% (879/1220)   Checking out files:  73% (891/1220)   Checking out files:  74% (903/1220)   Checking out files:  75% (915/1220)   Checking out files:  76% (928/1220)   Checking out files:  77% (940/1220)   Checking out files:  78% (952/1220)   Checking out files:  79% (964/1220)   Checking out files:  80% (976/1220)   Checking out files:  81% (989/1220)   Checking out files:  82% (1001/1220)   Checking out files:  83% (1013/1220)   Checking out files:  84% (1025/1220)   Checking out files:  85% (1037/1220)   Checking out files:  86% (1050/1220)   Checking out files:  87% (1062/1220)   Checking out files:  88% (1074/1220)   Checking out files:  89% (1086/1220)   Checking out files:  90% (1098/1220)   Checking out files:  91% (1111/1220)   Checking out files:  92% (1123/1220)   Checking out files:  93% (1135/1220)   Checking out files:  94% (1147/1220)   Checking out files:  95% (1159/1220)   Checking out files:  96% (1172/1220)   Checking out files:  97% (1184/1220)   Checking out files:  98% (1196/1220)   Checking out files:  99% (1208/1220)   Checking out files: 100% (1220/1220)   Checking out files: 100% (1220/1220), done.
+f1t@f1t-car:~/vanderbilt/src$ ls
+[0m[01;36mCMakeLists.txt[0m  [01;34mF1TenthVanderbilt[0m
+f1t@f1t-car:~/vanderbilt/src$ cd f
+bash: cd: f: No such file or directory
+f1t@f1t-car:~/vanderbilt/src$ cd f[KF1TenthVanderbilt/
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt$ ls
+[0m[01;34ma_stars_pure_pursuit[0m  BuildV2.pdf  docker-compose2.yml  docker-compose.yml  Dockerfile  [01;34mf110-fall2018-skeletons[0m  [01;34mhector_slam[0m  [01;34mimages[0m  [01;34mparticle_filter[0m  [01;34mracecar-ws[0m  [01;34mrange_libc[0m  README.md
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt$ cd [K[K[Kcd ra[Kc[Kaace[K[K[Kcecar-ws/
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws$ ls
+[0m[01;34msrc[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws$ ls
+[0m[01;34msrc[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws$ cd src
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src$ ls
+[0m[01;34mracecar[0m  [01;34mracecar-controllers[0m  [01;34mvesc[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src$ r[Kcd racecar
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar$ ls
+[0m[01;34mackermann_cmd_mux[0m  [01;34mracecar[0m  racecar.rosinstall  racecar-vm.rosinstall  [01;34msparkfun_9dof_razor_imu_m0[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar$ ls
+[0m[01;34mackermann_cmd_mux[0m  [01;34mracecar[0m  racecar.rosinstall  racecar-vm.rosinstall  [01;34msparkfun_9dof_razor_imu_m0[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar$ cd[K[Kcd c[Kracecar/
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar$ ls
+CMakeLists.txt  [0m[01;34mconfig[0m  [01;34mlaunch[0m  LICENSE  [01;34mmaps[0m  [01;34mmsg[0m  package.xml  [01;34mrviz[0m  [01;34mscripts[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar$ cd[K[Kcd launch/
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ ls
+[0m[01;34mincludes[0m  keyboard_teleop.launch  known_map_localization.launch  mux.launch  [01;34mreplay_bag_file[0m  teleop.launch  wall_follow.launch
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ roslaunch keyboard [K[K[K[K[K[K[K[K[Kracecar t[Kkeyboard.[K_teleop[K[K[K[K[Kte[K[Keleop.launch
+[31mRLException: [keyboard_teleop.launch] is neither a launch file in package [racecar] nor is [racecar] a launch file name[0m
+[31mThe traceback for the exception was written to the log file[0m
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ cd \
+> 
+f1t@f1t-car:~$ cd vanderbilt/sr[K[K
+f1t@f1t-car:~/vanderbilt$ source devel/setup.bash 
+f1t@f1t-car:~/vanderbilt$ cd src/F1TenthVanderbilt/raw[Kcecar-ws/w[Kracecar/racecar/launch
+bash: cd: src/F1TenthVanderbilt/racecar-ws/racecar/racecar/launch: No such file or directory
+f1t@f1t-car:~/vanderbilt$ cd src/F1TenthVanderbilt/racecar-ws/racecar/racecar/launch[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksrc/racecarr[K/racecar/launch/
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ roslaunch racecar keyboard[K[K[K[K[K[K[K[K[K
+racecar                             racecar_description                 racecar_potential_field_controller  
+racecar_control                     racecar_gazebo                      racecar_safety_controller           
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ roslaunch racecar k[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+[0m[01;34mincludes[0m  keyboard_teleop.launch  known_map_localization.launch  mux.launch  [01;34mreplay_bag_file[0m  teleop.launch  wall_follow.launch
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ roslaunch racecar keyboard_teleop.launch
+Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslaunch/__init__.py", line 258, in main
+    args = rlutil.resolve_launch_arguments(args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslaunch/rlutil.py", line 92, in resolve_launch_arguments
+    resolved = roslib.packages.find_resource(args[0], args[1])
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/roslib/packages.py", line 528, in find_resource
+    source_path_to_packages=source_path_to_packages)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/catkin/find_in_workspaces.py", line 149, in find_in_workspaces
+    source_path_to_packages[source_path] = find_packages(source_path)
+  File "/usr/lib/python2.7/dist-packages/catkin_pkg/packages.py", line 96, in find_packages
+    raise RuntimeError('\n'.join(duplicates))
+RuntimeError: Multiple packages found with the same name "ackermann_cmd_mux":
+- F1TenthVanderbilt/f110-fall2018-skeletons/system/racecar/ackermann_cmd_mux
+- F1TenthVanderbilt/racecar-ws/src/racecar/ackermann_cmd_mux
+Multiple packages found with the same name "racecar":
+- F1TenthVanderbilt/f110-fall2018-skeletons/system/racecar/racecar
+- F1TenthVanderbilt/racecar-ws/src/racecar/racecar
+Multiple packages found with the same name "vesc":
+- F1TenthVanderbilt/f110-fall2018-skeletons/system/vesc/vesc
+- F1TenthVanderbilt/racecar-ws/src/vesc/vesc
+Multiple packages found with the same name "vesc_ackermann":
+- F1TenthVanderbilt/f110-fall2018-skeletons/system/vesc/vesc_ackermann
+- F1TenthVanderbilt/racecar-ws/src/vesc/vesc_ackermann
+Multiple packages found with the same name "vesc_driver":
+- F1TenthVanderbilt/f110-fall2018-skeletons/system/vesc/vesc_driver
+- F1TenthVanderbilt/racecar-ws/src/vesc/vesc_driver
+Multiple packages found with the same name "vesc_msgs":
+- F1TenthVanderbilt/f110-fall2018-skeletons/system/vesc/vesc_msgs
+- F1TenthVanderbilt/racecar-ws/src/vesc/vesc_msgs
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ ls
+[0m[01;34mincludes[0m  keyboard_teleop.launch  known_map_localization.launch  mux.launch  [01;34mreplay_bag_file[0m  teleop.launch  wall_follow.launch
+f1t@f1t-car:~/vanderbilt/src/F1TenthVanderbilt/racecar-ws/src/racecar/racecar/launch$ cd \
+> 
+f1t@f1t-car:~$ mkdir [K[K[K[K[K[Kmkdir v2
+f1t@f1t-car:~$ cd v2/
+f1t@f1t-car:~/v2$ mkdir src
+f1t@f1t-car:~/v2$ cd[K[Kcatkin[K[K[K[K[K[Kcd src/
+f1t@f1t-car:~/v2/src$ ^C
+f1t@f1t-car:~/v2/src$ cd ..
+f1t@f1t-car:~/v2$ rm r[Ksrc
+rm: can

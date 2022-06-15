@@ -1,0 +1,14 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <arg name="racecar_version" />
+  <arg name="drive_config"
+       default="$(find racecar)/config/$(arg racecar_version)/drive.yaml" />
+
+  <rosparam file="$(arg drive_config)" command="load" />
+
+  <!--<node pkg="test" type="test_node" name="test_node" /> -->
+  <node pkg="joy" type="joy_node" name="joy_node" />
+
+  <node pkg="racecar" type="drive.py" name="drive" />
+
+</launch>
